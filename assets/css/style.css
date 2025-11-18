@@ -1,0 +1,116 @@
+     body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #01257D, #00FFFF);
+            color: white !important;
+            font-size: 16px;
+        }
+
+       
+        .navbar-custom {
+            background-color: #01257D !important;
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+
+        .profile-pic {
+        width: 260px;
+        height: 260px;
+        border-radius: 25px; 
+        object-fit: cover;
+        border: 3px solid white;
+}
+
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .bg-dark-section {
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: 20px;
+            padding: 40px;
+        }
+
+        h1, h2, h3, h4, p, li, a, span {
+            color: white !important;
+        }
+  
+.daltonismo {
+    background: #000 !important;
+    color: #FFD700 !important;
+}
+
+.daltonismo h1, 
+.daltonismo h2, 
+.daltonismo h3,
+.daltonismo h4,
+.daltonismo p,
+.daltonismo li,
+.daltonismo a,
+.daltonismo span {
+    color: #FFD700 !important;
+}
+
+.daltonismo .navbar-custom {
+    background: #111 !important;
+}
+
+.daltonismo .bg-dark-section {
+    background: rgba(255, 255, 0, 0.1) !important;
+}
+
+.font-large {
+    font-size: 20px !important;
+}
+
+.font-large h1,
+.font-large h2,
+.font-large h3,
+.font-large h4,
+.font-large p,
+.font-large li,
+.font-large a,
+.font-large span {
+    font-size: 110% !important;
+}
+
+
+.fade-section {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all .8s ease;
+}
+
+.fade-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+body {
+    background-size: 300% 300%;
+    animation: gradientMove 12s ease infinite;
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.bg-dark-section {
+    transition: 0.4s;
+}
+
+.bg-dark-section:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: scale(1.02);
+}
+.profile-pic {
+    transition: transform 0.5s ease;
+}
+
+.profile-pic:hover {
+    transform: translateY(-10px) scale(1.05);
+}
