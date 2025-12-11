@@ -1,43 +1,84 @@
-     body {
-            min-height: 100vh;
-            background: linear-gradient(135deg, #01257D, #00FFFF);
-            color: white !important;
-            font-size: 16px;
-        }
+/* ---------------------------
+    ESTILOS BASE
+---------------------------- */
 
-       
-        .navbar-custom {
-            background-color: #01257D !important;
-        }
-
-        .navbar-brand {
-            font-weight: bold;
-            font-size: 1.3rem;
-        }
-
-        .profile-pic {
-        width: 260px;
-        height: 260px;
-        border-radius: 25px; 
-        object-fit: cover;
-        border: 3px solid white;
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #01257D, #00FFFF);
+    background-size: 300% 300%;
+    animation: gradientMove 12s ease infinite;
+    color: white !important;
+    font-size: 16px;
 }
 
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
 
-        .section {
-            padding: 80px 0;
-        }
+.navbar-custom {
+    background-color: #01257D !important;
+}
 
-        .bg-dark-section {
-            background-color: rgba(0, 0, 0, 0.2);
-            border-radius: 20px;
-            padding: 40px;
-        }
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.3rem;
+}
 
-        h1, h2, h3, h4, p, li, a, span {
-            color: white !important;
-        }
-  
+/* Imagen principal */
+.profile-pic {
+    width: 260px;
+    height: 260px;
+    border-radius: 25px;
+    object-fit: cover;
+    border: 3px solid white;
+    transition: transform 0.5s ease;
+}
+
+.profile-pic:hover {
+    transform: translateY(-10px) scale(1.05);
+}
+
+/* Secciones */
+.section {
+    padding: 80px 0;
+}
+
+.bg-dark-section {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    padding: 40px;
+    transition: 0.4s;
+}
+
+.bg-dark-section:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: scale(1.02);
+}
+
+/* Textos */
+h1, h2, h3, h4, p, li, a, span {
+    color: white !important;
+}
+
+/* Fade animation */
+.fade-section {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all .8s ease;
+}
+
+.fade-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ---------------------------
+    MODOS ESPECIALES
+---------------------------- */
+
+/* Daltonismo */
 .daltonismo {
     background: #000 !important;
     color: #FFD700 !important;
@@ -62,6 +103,7 @@
     background: rgba(255, 255, 0, 0.1) !important;
 }
 
+/* Aumentar letra */
 .font-large {
     font-size: 20px !important;
 }
@@ -78,39 +120,102 @@
 }
 
 
-.fade-section {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: all .8s ease;
+/* =====================================================
+   RESPONSIVIDAD ADAPTADA A TODO TU HTML
+   (MOBILE FIRST → TABLET → DESKTOP → DESKTOP XL)
+===================================================== */
+
+
+/* ---------------------------
+    MOBILE FIRST (ya aplicado)
+---------------------------- */
+
+h1 { font-size: 2rem; }
+h4 { font-size: 1.2rem; }
+.fs-5 { font-size: 1rem !important; }
+
+.container {
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
 }
 
-.fade-section.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-body {
-    background-size: 300% 300%;
-    animation: gradientMove 12s ease infinite;
+.carousel-caption {
+    font-size: 0.9rem;
+    bottom: -10px;
 }
 
-@keyframes gradientMove {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+
+/* ---------------------------
+    TABLET (≥ 768px)
+---------------------------- */
+@media (min-width: 768px) {
+
+    h1 { font-size: 2.4rem; }
+    h4 { font-size: 1.5rem; }
+    .fs-5 { font-size: 1.1rem !important; }
+
+    .profile-pic {
+        width: 320px;
+        height: 320px;
+    }
+
+    .section {
+        padding: 100px 0;
+    }
+
+    .carousel-caption {
+        font-size: 1rem;
+        bottom: 12px;
+    }
 }
 
-.bg-dark-section {
-    transition: 0.4s;
+
+/* ---------------------------
+    DESKTOP (≥ 1024px)
+---------------------------- */
+@media (min-width: 1024px) {
+
+    h1 { font-size: 3rem; }
+    h4 { font-size: 1.8rem; }
+    .fs-5 { font-size: 1.15rem !important; }
+
+    .profile-pic {
+        width: 360px;
+        height: 360px;
+    }
+
+    .section {
+        padding: 120px 0;
+    }
+
+    .row.align-items-center {
+        gap: 20px;
+    }
+
+    .carousel-item img {
+        max-height: 450px;
+        object-fit: cover;
+    }
+
+    .carousel-caption {
+        font-size: 1.1rem;
+    }
 }
 
-.bg-dark-section:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-    transform: scale(1.02);
-}
-.profile-pic {
-    transition: transform 0.5s ease;
-}
 
-.profile-pic:hover {
-    transform: translateY(-10px) scale(1.05);
+/* ---------------------------
+    DESKTOP XL (≥ 1400px)
+---------------------------- */
+@media (min-width: 1400px) {
+
+    .container {
+        max-width: 1300px;
+    }
+
+    .profile-pic {
+        width: 420px;
+        height: 420px;
+    }
+
+    h1 { font-size: 3.4rem; }
 }
