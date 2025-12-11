@@ -62,4 +62,5 @@ Mi formación multidisciplinaria me permite abordar proyectos desde la perspecti
     Publicidad (Mención Creativa) – Universidad Santiago de Chile
 
     Desarrollador Front End - Coding Dojo Latam# PortafolioAndreaCorrea
+    ![Banner](https://drive.google.com/file/d/1Xqtq1J7DyC9ApSvPLFqcaQMJSGhldRbI/view?usp=sharing)
 # PortafolioAndreaCorrea
