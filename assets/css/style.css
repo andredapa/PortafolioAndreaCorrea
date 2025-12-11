@@ -1,20 +1,8 @@
-/* ---------------------------
-    ESTILOS BASE
----------------------------- */
-
 body {
     min-height: 100vh;
     background: linear-gradient(135deg, #01257D, #00FFFF);
-    background-size: 300% 300%;
-    animation: gradientMove 12s ease infinite;
     color: white !important;
     font-size: 16px;
-}
-
-@keyframes gradientMove {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
 }
 
 .navbar-custom {
@@ -26,11 +14,10 @@ body {
     font-size: 1.3rem;
 }
 
-/* Imagen principal */
 .profile-pic {
     width: 260px;
     height: 260px;
-    border-radius: 25px;
+    border-radius: 25px; 
     object-fit: cover;
     border: 3px solid white;
     transition: transform 0.5s ease;
@@ -40,7 +27,6 @@ body {
     transform: translateY(-10px) scale(1.05);
 }
 
-/* Secciones */
 .section {
     padding: 80px 0;
 }
@@ -57,28 +43,10 @@ body {
     transform: scale(1.02);
 }
 
-/* Textos */
 h1, h2, h3, h4, p, li, a, span {
     color: white !important;
 }
 
-/* Fade animation */
-.fade-section {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: all .8s ease;
-}
-
-.fade-section.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* ---------------------------
-    MODOS ESPECIALES
----------------------------- */
-
-/* Daltonismo */
 .daltonismo {
     background: #000 !important;
     color: #FFD700 !important;
@@ -103,7 +71,6 @@ h1, h2, h3, h4, p, li, a, span {
     background: rgba(255, 255, 0, 0.1) !important;
 }
 
-/* Aumentar letra */
 .font-large {
     font-size: 20px !important;
 }
@@ -119,103 +86,37 @@ h1, h2, h3, h4, p, li, a, span {
     font-size: 110% !important;
 }
 
-
-/* =====================================================
-   RESPONSIVIDAD ADAPTADA A TODO TU HTML
-   (MOBILE FIRST → TABLET → DESKTOP → DESKTOP XL)
-===================================================== */
-
-
-/* ---------------------------
-    MOBILE FIRST (ya aplicado)
----------------------------- */
-
-h1 { font-size: 2rem; }
-h4 { font-size: 1.2rem; }
-.fs-5 { font-size: 1rem !important; }
-
-.container {
-    padding-left: 1.2rem;
-    padding-right: 1.2rem;
+.fade-section {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all .8s ease;
 }
 
-.carousel-caption {
-    font-size: 0.9rem;
-    bottom: -10px;
+.fade-section.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
-
-/* ---------------------------
-    TABLET (≥ 768px)
----------------------------- */
-@media (min-width: 768px) {
-
-    h1 { font-size: 2.4rem; }
-    h4 { font-size: 1.5rem; }
-    .fs-5 { font-size: 1.1rem !important; }
-
-    .profile-pic {
-        width: 320px;
-        height: 320px;
-    }
-
-    .section {
-        padding: 100px 0;
-    }
-
-    .carousel-caption {
-        font-size: 1rem;
-        bottom: 12px;
-    }
+body {
+    background-size: 300% 300%;
+    animation: gradientMove 12s ease infinite;
 }
 
-
-/* ---------------------------
-    DESKTOP (≥ 1024px)
----------------------------- */
-@media (min-width: 1024px) {
-
-    h1 { font-size: 3rem; }
-    h4 { font-size: 1.8rem; }
-    .fs-5 { font-size: 1.15rem !important; }
-
-    .profile-pic {
-        width: 360px;
-        height: 360px;
-    }
-
-    .section {
-        padding: 120px 0;
-    }
-
-    .row.align-items-center {
-        gap: 20px;
-    }
-
-    .carousel-item img {
-        max-height: 450px;
-        object-fit: cover;
-    }
-
-    .carousel-caption {
-        font-size: 1.1rem;
-    }
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
+/* --------------------------------------------------------- */
+/*   AJUSTE: IMÁGENES DEL CARRUSEL DEL MISMO TAMAÑO          */
+/* --------------------------------------------------------- */
 
-/* ---------------------------
-    DESKTOP XL (≥ 1400px)
----------------------------- */
-@media (min-width: 1400px) {
-
-    .container {
-        max-width: 1300px;
-    }
-
-    .profile-pic {
-        width: 420px;
-        height: 420px;
-    }
-
-    h1 { font-size: 3.4rem; }
+.carousel-item img {
+    height: 350px;           /* Ajusta si quieres otro alto */
+    width: 100%;             /* Que siempre ocupen el ancho */
+    object-fit: cover;       /* Corta la imagen sin deformarla */
+    object-position: center; /* Centra el recorte */
+    border-radius: 15px;     /* Opcional, queda más elegante */
 }
+
