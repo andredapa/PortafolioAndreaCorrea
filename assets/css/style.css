@@ -1,8 +1,19 @@
+/* --------------------------------------------------------- */
+/*                     ESTILOS BASE                           */
+/* --------------------------------------------------------- */
 body {
     min-height: 100vh;
     background: linear-gradient(135deg, #01257D, #00FFFF);
     color: white !important;
     font-size: 16px;
+    background-size: 300% 300%;
+    animation: gradientMove 12s ease infinite;
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 .navbar-custom {
@@ -17,7 +28,7 @@ body {
 .profile-pic {
     width: 260px;
     height: 260px;
-    border-radius: 25px; 
+    border-radius: 25px;
     object-fit: cover;
     border: 3px solid white;
     transition: transform 0.5s ease;
@@ -97,26 +108,99 @@ h1, h2, h3, h4, p, li, a, span {
     transform: translateY(0);
 }
 
-body {
-    background-size: 300% 300%;
-    animation: gradientMove 12s ease infinite;
-}
-
-@keyframes gradientMove {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
 /* --------------------------------------------------------- */
-/*   AJUSTE: IMÁGENES DEL CARRUSEL DEL MISMO TAMAÑO          */
+/*             AJUSTE: IMÁGENES DEL CARRUSEL                 */
 /* --------------------------------------------------------- */
-
 .carousel-item img {
-    height: 350px;           /* Ajusta si quieres otro alto */
-    width: 100%;             /* Que siempre ocupen el ancho */
-    object-fit: cover;       /* Corta la imagen sin deformarla */
-    object-position: center; /* Centra el recorte */
-    border-radius: 15px;     /* Opcional, queda más elegante */
+    height: 350px;           
+    width: 100%;             
+    object-fit: cover;       
+    object-position: center; 
+    border-radius: 15px;     
 }
 
+/* --------------------------------------------------------- */
+/*                 SECCIONES FLEX / GRID                     */
+/* --------------------------------------------------------- */
+.section-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.section-content > div {
+    flex: 1 1 300px; /* crece, se encoge, mínimo 300px */
+    max-width: 500px;
+}
+
+/* --------------------------------------------------------- */
+/*                   BOTONES RESPONSIVOS                     */
+/* --------------------------------------------------------- */
+a.btn, button {
+    padding: 12px 25px;
+    font-size: 1rem;
+    border-radius: 8px;
+}
+
+/* --------------------------------------------------------- */
+/*                TIPOGRAFÍA ESCALABLE                        */
+/* --------------------------------------------------------- */
+h1 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+h2 {
+    font-size: clamp(1.3rem, 3.5vw, 2rem);
+}
+
+p, li, a, span {
+    font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+}
+
+/* --------------------------------------------------------- */
+/*                MEDIA QUERIES RESPONSIVE                   */
+/* --------------------------------------------------------- */
+@media (max-width: 992px) {
+    .profile-pic {
+        width: 200px;
+        height: 200px;
+        border-radius: 20px;
+    }
+
+    .section {
+        padding: 60px 20px;
+    }
+
+    .bg-dark-section {
+        padding: 30px 20px;
+    }
+
+    .carousel-item img {
+        height: 250px;
+    }
+}
+
+@media (max-width: 576px) {
+    .profile-pic {
+        width: 150px;
+        height: 150px;
+        border-radius: 15px;
+    }
+
+    .section {
+        padding: 40px 10px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    .carousel-item img {
+        height: 180px;
+    }
+}
